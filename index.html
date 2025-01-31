@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <title>Clean Water for All: The Nanomaterial Revolution</title>
+    
+    <style>
+        :root {
+            --primary-blue: #1a4d8f;
+            --accent-teal: #00b4b3;
+            --dark-text: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #4a6b7c 50%, #87b5b5 50%);
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(255,255,255,0.3) 100%);
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .filter-model {
+            display: grid;
+            grid-template-rows: repeat(3, 100px);
+            width: 60%;
+            margin: 2rem auto;
+        }
+
+        .filter-layer {
+            padding: 1rem;
+            border: 2px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            background: var(--accent-teal);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .infographic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-model {
+                width: 90%;
+            }
+        }
+
+        /* Custom diagram styles */
+
+        .tech-card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Reverse Osmosis diagram */
+        .ro-diagram {
+            position: relative;
+            height: 120px;
+            width: 100px;
+            background-color: #FF8A80;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .ro-diagram .membrane {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            width: 70px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        .ro-diagram .water-input,
+        .ro-diagram .water-output {
+            position: absolute;
+            top: 60px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #4DB6AC;
+        }
+
+        .ro-diagram .water-input {
+            left: 10px;
+        }
+
+        .ro-diagram .water-output {
+            right: 10px;
+        }
+
+        .ro-diagram .waste {
+            position: absolute;
+            top: 100px;
+            left: 15px;
+            width: 70px;
+            height: 5px;
+            background-color: #B71C1C;
+            border-radius: 2px;
+        }
+
+        /* Activated Carbon diagram */
+        .carbon-diagram {
+            position: relative;
+            height: 120px;
+            width: 100px;
+            background-color: #E0E0E0;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .carbon-diagram .adsorption {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            width: 70px;
+            height: 5px;
+            background-color: #009688;
+            border-radius: 2px;
+        }
+
+        .carbon-diagram .contaminants {
+            position: absolute;
+            top: 60px;
+            left: 15px;
+            width: 70px;
+            height: 10px;
+            background-color: #FF5722;
+            border-radius: 2px;
+        }
+
+        /* Chlorination diagram */
+        .chlorine-diagram {
+            position: relative;
+            height: 120px;
+            width: 100px;
+            background-color: #FFF9C4;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .chlorine-diagram .chlorine {
+            position: absolute;
+            top: 30px;
+            left: 15px;
+            width: 70px;
+            height: 10px;
+            background-color: #FFEB3B;
+            border-radius: 2px;
+        }
+
+        .chlorine-diagram .chlorine-effect {
+            position: absolute;
+            top: 60px;
+            left: 15px;
+            width: 70px;
+            height: 20px;
+            background-color: #F44336;
+            border-radius: 2px;
+        }
+        :root {
+            --primary-blue: #1a4d8f;
+            --accent-teal: #00b4b3;
+            --dark-text: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #4a6b7c 50%, #87b5b5 50%);
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(255,255,255,0.3) 100%);
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .nanoparticle-animation {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            margin: 2rem auto;
+            background: rgb(108, 162, 167);
+
+        }
+
+        .filter-model {
+            display: grid;
+            grid-template-rows: repeat(3, 100px);
+            width: 60%;
+            margin: 2rem auto;
+        }
+
+        .filter-layer {
+            padding: 1rem;
+            border: 2px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            background: var(--accent-teal);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .infographic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-model {
+                width: 90%;
+            }
+        }
+        .split-visual {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(to right, #4a4a4a 50%, #87b5b5 50%);
+            overflow: hidden;
+        }
+        
+        .nanoparticle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: gold;
+            border-radius: 50%;
+            animation: float 3s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .tech-card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 8px;
+        }
+        .filter-model {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .filter-layer {
+            position: relative;
+            padding: 1rem;
+            margin: 0rem 0;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .filter-layer::before {
+            content: attr(data-label);
+            position: absolute;
+            left: -70px;
+            top: 50%;
+            transform: rotate(-90deg);
+            font-weight: bold;
+        }
+        
+        .consequence-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .consequence-list li {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .positive { background: #e8f5e9; }
+        .negative { background: #ffebee; }
+        @media (max-width: 768px) {
+            .comparison-grid, .nanoparticle-diagram {
+                grid-template-columns: 1fr;
+            }
+        }
+        :root {
+            --primary-blue: #1a4d8f;
+            --accent-teal: #00b4b3;
+            --dark-text: #2c3e50;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tech-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nanoparticle-diagram {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .breakthrough-box {
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem;
+            margin: 2rem 0;
+            background: #e6f7f7;
+        }
+
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(0, 255, 255, 0.8);
+            animation: scatterparticles 1s infinite ease-in-out, moveRandom 2s infinite linear;
+        }
+        
+        /* Different color particles */
+        .particle.ag {
+            background-color: rgba(255, 215, 0, 0.8);  /* Gold for silver (Ag) particles */
+        }
+        
+        .particle.fe {
+            background-color: rgba(255, 87, 34, 0.8); /* Iron (Fe) particles */
+        }
+        
+        .particle.cnt {
+            background-color: rgba(0, 255, 255, 0.8); /* Carbon Nanotubes (CNT) particles */
+        }
+        
+        /* Floating animation (moves particles up/down in a sinusoidal manner) */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Random movement animation (move particles in various directions) */
+        @keyframes moveRandom {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50px, 50px);
+            }
+            50% {
+                transform: translate(-30px, 30px);
+            }
+            75% {
+                transform: translate(20px, -20px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        
+        /* Particle size scaling for variety */
+        .particle {
+            animation: float 10s infinite ease-in-out, moveRandom 15s infinite linear;
+        }
+        
+        /* Ensure particles are scattered randomly on load */
+        @keyframes scatterParticles {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(var(--randomX), var(--randomY));
+            }
+        }
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #4a6b7c 50%, #87b5b5 50%);
+            position: relative;
+            margin-top: 60px;
+            color: white;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            padding: 1rem 2rem;
+            background: var(--accent-teal);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #007e7d;
+        }
+        .tech-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .tech-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .infographic-grid {
+                grid-template-columns: 1fr;
+            }
+        
+            .tech-card {
+                margin: 1rem 0;
+            }
+        
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        .innovation-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+        
+        .card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .compact-list {
+            margin-top: 20px;
+        }
+        
+        .compact-list .benefit, .compact-list .challenge {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        
+        .research-focus {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .research-card {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .research-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .research-card p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('challenges')">Current Challenges</a>
+        <a href="#" onclick="showSection('technology')">Future Technology</a>
+        <a href="#" onclick="showSection('prototype')">Prototype</a>
+        <a href="#" onclick="showSection('research')">Research & Development</a>
+
+    </nav>
+    <section id="home" class="content-section">
+        <div class="split-visual">
+            <div class="nanoparticle" style="left: 45%; top: 20%"></div>
+            <div class="nanoparticle" style="left: 48%; top: 60%"></div>
+        </div>
+        
+        <div class="hero-text">
+            <h1>Clean Water for All: The Nanomaterial Revolution</h1>
+            <p>Current water purification methods struggle with efficiency and accessibility. Our project leverages cutting-edge nanomaterials to create affordable, scalable solutions that address multiple contaminants simultaneously.</p>
+            
+            <div class="infographic-grid">
+                <div class="tech-card">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>⚡ Removes heavy metals, drugs, and pathogens</li>
+                        <li>🌍 Works with minimal infrastructure</li>
+                        <li>🔬 Multifunctional nanoparticle design</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="cta-button" onclick="showSection('challenges')">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Current Challenges -->
+    <section id="challenges" class="content-section">
+        <h2>Why Existing Methods Fall Short</h2>
+        
+        <div class="infographic-grid">
+            <div class="tech-card">
+                
+                <div class="ro-diagram">
+                    <div class="membrane"></div>
+                    <div class="water-input"></div>
+                    <div class="water-output"></div>
+                    <div class="waste"></div>
+                </div>
+                <h3>Reverse Osmosis</h3>
+                <ul>
+                    <li>Wastes 3-4L per 1L purified</li>
+                    <li>High energy consumption</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <div class="carbon-diagram">
+                    <div class="adsorption"></div>
+                    <div class="contaminants"></div>
+                </div>
+                <h3>Activated Carbon</h3>
+                <ul>
+                    <li>Adsorbs organic compounds</li>
+                    <li>Ineffective against heavy metals</li>
+                    <li>Requires frequent replacement</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <div class="chlorine-diagram">
+                    <div class="chlorine"></div>
+                    <div class="chlorine-effect"></div>
+                </div>
+                <h3>Chlorination</h3>
+                <ul>
+                    <li>Forms harmful DBPs</li>
+                    <li>Limited residual effect</li>
+                    <li>Corrosive to infrastructure</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="urgent-callout">
+            <h3>The Urgency</h3>
+            <p>With 2 billion people lacking safe drinking water and microplastics found in 94% of US tap water, innovative solutions can't wait.</p>
+            <button class="button" onclick="showSection('technology')">Nanomaterial Solutions</button>
+        </div>
+    </section>
+
+    <!-- Future Technology -->
+    <section id="technology" class="content-section">
+        <h2>Nanomaterial Innovation</h2>
+    
+        <div class="innovation-cards">
+            <div class="card">
+                <h3>Multifunctional Nanoparticles</h3>
+                <p>Target multiple contaminants simultaneously, reducing costs and optimizing purification.</p>
+            </div>
+            <div class="card">
+                <h3>High Efficiency</h3>
+                <p>Adsorb a variety of pollutants, providing superior performance compared to conventional methods.</p>
+            </div>
+            <div class="card">
+                <h3>Portability</h3>
+                <p>Ideal for emergency and remote applications, providing clean water without complex infrastructure.</p>
+            </div>
+        </div>
+    
+        <h3>Benefits & Challenges</h3>
+        <div class="compact-list">
+            <div class="benefit">
+                <strong>Global Impact:</strong> Scalable solution for water scarcity, especially in rural and disaster areas.
+            </div>
+            <div class="benefit">
+                <strong>Sustainability:</strong> Energy-efficient, greener alternative to reverse osmosis and distillation.
+            </div>
+            <div class="benefit">
+                <strong>Cost-Effective:</strong> Reduces reliance on expensive technologies, making clean water more accessible.
+            </div>
+            <div class="challenge">
+                <strong>Health & Safety:</strong> Safe removal of nanoparticles from water is crucial to avoid toxicity.
+            </div>
+            <div class="challenge">
+                <strong>Environmental Impact:</strong> Proper nanoparticle disposal is essential to avoid ecosystem contamination.
+            </div>
+            <div class="challenge">
+                <strong>Scalability:</strong> Initial high costs require ongoing innovation and investment.
+            </div>
+        </div>
+    
+        <button class="button" onclick="showSection('prototype')">View Prototype</button>
+    </section>
+    
+    
+
+    <section id="prototype" class="content-section">
+        <h2>Next-Generation Filter Design</h2>
+        
+        <div class="filter-model">
+            <div class="filter-layer" data-label="Layer 1">
+                <h4>Magnetic CNTs</h4>
+                <p>Captures lead, mercury, and arsenic</p>
+            </div>
+            <div class="filter-layer" data-label="Layer 2">
+                <h4>Photocatalytic TiO₂</h4>
+                <p>Breaks down organic pollutants using sunlight</p>
+            </div>
+            <div class="filter-layer" data-label="Layer 3">
+                <h4>Graphene Membranes</h4>
+                <p>Increases flow rate and blocks contaminants at the molecular level</p>
+            </div>
+        </div>
+        
+        <div class="design-decisions">
+            <h3>Key Design Choices</h3>
+            <ul>
+                <li>🧲 Magnetic recovery system</li>
+                <li>📦 Modular cartridge design</li>
+                <li>⚖️ Vastly more efficient than activated carbon</li>
+            </ul>
+        </div>
+        
+        <button class="button">Support Our Research</button>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="content-section">
+        <h2>Impact & Global Reach</h2>
+        
+        <p>Our solution can reach over 2 billion people currently without access to clean water. By implementing scalable, low-cost systems in rural and urban areas, we aim to significantly reduce waterborne diseases.</p>
+        
+        <div class="impact-stats">
+            <div class="stat">
+                <h3>2B+</h3>
+                <p>People without clean water</p>
+            </div>
+            <div class="stat">
+                <h3>60%</h3>
+                <p>Reduction in waterborne diseases</p>
+            </div>
+            <div class="stat">
+                <h3>50%</h3>
+                <p>Cost savings compared to traditional methods</p>
+            </div>
+        </div>
+
+        <button class="button" onclick="showSection('challenges')">Join the Movement</button>
+    </section>
+    <section id="research" class="content-section">
+        <h2>Research & Development</h2>
+        <p>We are continuously refining our nanomaterial solutions through rigorous R&D, collaborating with leading research institutions to optimize water purification technologies and expand their applications across diverse environments.</p>
+    
+        <div class="research-focus">
+            <div class="research-card">
+                <h3>Nanomaterial Synthesis</h3>
+                <p>Exploring new materials for more efficient contaminant removal and increased environmental compatibility.</p>
+            </div>
+            <div class="research-card">
+                <h3>Prototype Testing</h3>
+                <p>Testing filter prototypes in a variety of real-world conditions to ensure effectiveness and durability.</p>
+            </div>
+            <div class="research-card">
+                <h3>Collaborative Studies</h3>
+                <p>Partnering with universities and global experts to drive innovation and discover new applications for our technology.</p>
+            </div>
+        </div>
+    
+        <button class="button" onclick="showSection('impact')">Explore Impact</button>
+    </section>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.style.display = 'none');
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
